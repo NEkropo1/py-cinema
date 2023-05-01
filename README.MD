@@ -23,10 +23,10 @@ Windows:
 ```  
   venv\Scripts\activate
   pip install -r requirements.txt
-  set DB_HOST=<your db hostname>
-  set DB_NAME=<your db name>
-  set DB_USER=<your db user>
-  set DB_PASSWORD=<your db password>
+  set POSTGRES_HOST=<your db hostname>
+  set POSTGRES_DB=<your db name>
+  set POSTGRES_USER=<your db user>
+  set POSTGRES_PASSWORD=<your db password>
   set DB_SECRET_KEY=<your secret key>
   python manage.py migrate
   python manage.py runserver
