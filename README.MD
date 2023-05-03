@@ -1,6 +1,7 @@
 Cinema API
 
 API service for cinema management written on DRF
+
 Installing using GitHub:
 
 Install PostgresSQL and create db
@@ -9,40 +10,47 @@ Install PostgresSQL and create db
     cd cinema-api
     python -m venv venv
 ```
+Create a new .env file by copying .env.sample with
+`cp .env.sample .env` on Linux or simply copypaste on Windows.
+
+Open the .env file in a text editor and update the values
+of the environment variables according to sample.
+
 Linux/macOS:
+
 ```
   source venv/bin/activate
   pip install -r requirements.txt
-  export DB_HOST=<your db hostname>
-  export DB_NAME=<your db name>
-  export DB_USER=<your db user>
-  export DB_PASSWORD=<your db password>
-  export DB_SECRET_KEY=<your secret key>
+  source .env
 ```
 Windows: 
 ```  
   venv\Scripts\activate
   pip install -r requirements.txt
-  set POSTGRES_HOST=<your db hostname>
-  set POSTGRES_DB=<your db name>
-  set POSTGRES_USER=<your db user>
-  set POSTGRES_PASSWORD=<your db password>
-  set DB_SECRET_KEY=<your secret key>
+  npm install -g dotenv
+```  
+Change directory to your project, like in this sample:
+`cd C:\myproject`
+You should be able to run .env with simple `dotenv` command.
+
+After these commands, on any system, run and apply migrations:
+```
   python manage.py migrate
   python manage.py runserver
 ```
-Run with docker
 
-Docker should be installed
+Run with docker:
 
-docker-compose up --build
+Docker should be installed.
 
-Getting access
+`docker-compose up --build`
+
+Getting access:
 
     create user via localhost/api/user/register/
     get access token via localhost/api/user/token/
 
-Features
+Features:
 
     JWT authenticated
     Admin panel localhost/admin/
